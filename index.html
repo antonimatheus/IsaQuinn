@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isabella Quinn</title>
-    <link rel="shortcut icon" href="imgs/fire.webp" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="title">
-        <h1>
-            VIP
-        </h1>
-    </div>
-
-    <div id="text">
-        <p>
-            See my <strong>secrets</strong>! 👀🔥
-        </p>
-    </div>
-    <div id="imgsBlock">
-        <div id="imgs">
-            <div class="imgs--div">
-                <a href="https://pay.hotmart.com/M98156692P"  target="_blank" rel="noreferrer" class="foto-container">
-                    <img src="imgs/cadeado.webp" alt="cadeado1" class="cadeado">
-                    <img src="imgs/isaaa3.webp" alt="pic1" class="modelo">
-                </a>
-            </div>
-
-            <div class="imgs--div">
-                <a href="https://pay.hotmart.com/M98156692P"  target="_blank" rel="noreferrer" class="foto-container">
-                    <img src="imgs/cadeado.webp" alt="cadeado3" class="cadeado">
-                    <img src="imgs/isaaa.webp" alt="pic3" class="modelo">
-                </a>
-            </div>    
-
-            <div class="imgs--div">
-                <a href="https://pay.hotmart.com/M98156692P"  target="_blank" rel="noreferrer" class="foto-container">
-                    <img src="imgs/cadeado.webp" alt="cadeado2" class="cadeado">
-                    <img src="imgs/isaaa2.webp" alt="pic2" class="modelo">
-                </a>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/photgProAntoniWithoutBack.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Social links profile</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="profileContent">
+        <div id="imgProfile">
+          <img src="assets/images/background2.webp" alt="img" />
         </div>
-        <div id="cliqueParaDesbloquear">
-            <a href="https://pay.hotmart.com/M98156692P" target="_blank" rel="noreferrer">click to see me!</a>
-        </div>
-    </div>
-    
-    <div id="buttonCTA">
-        <a href="https://pay.hotmart.com/M98156692P" target="_blank" rel="noreferrer">
-            <p>
-                <strong>see me now!</strong>
+        <div id="profileInformations">
+          <div id="name">
+            <p>Angelie Quinn</p>
+          </div>
+          <div id="location">
+            <p id="location">
+              <i class="fa-solid fa-location-dot"></i> Detecting location...
             </p>
-            <i class="fa-solid fa-arrow-right-long"></i>
-        </a>
-        <p id="aviso">
-            you will receive it in your email*
-        </p>
+          </div>
+        </div>
+        <div id="about">
+          <p>4’10" and Irresistible on Camera 💦</p>
+        </div>
+      </div>
+      <div id="profileLinks">
+        <ul>
+          <a href="isa.html" target="_blank">
+            <li>My Secrets 👀🔥</li>
+          </a>
+        </ul>
+      </div>
     </div>
-</body>
+
+    <script>
+      fetch("https://ipapi.co/json/")
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById(
+            "location"
+          ).innerHTML = `<i class="fa-solid fa-location-dot"></i> ${data.city}, ${data.country_name}`;
+        })
+        .catch(() => {
+          document.getElementById(
+            "location"
+          ).innerHTML = `<i class="fa-solid fa-location-dot"></i> Could not retrieve location.`;
+        });
+    </script>
+  </body>
 </html>

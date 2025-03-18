@@ -1,204 +1,158 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("assets/fonts/static/Inter-Regular.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Inter-SemiBold";
+  src: url("assets/fonts/static/Inter-SemiBold.ttf") format(truetype);
+}
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("assets/fonts/static/Inter-Bold.ttf") format(truetype);
+}
+
 :root {
-    --rose: #FCAEBE;
-    --whitesmoke: #f5f5f5;
-    --gray: #737373;
+  --fontRegular: "Inter-Regular";
+  --fontSemiBold: "Inter-SemiBold";
+  --fontBold: "Inter-Bold";
+
+  --PrincipalColor: hsl(350, 100%, 88%);
+
+  --White: hsl(0, 0%, 100%);
+  --Grey: hsl(0, 0%, 20%);
+  --DarkGrey: hsl(0, 0%, 12%);
+  --OffBlack: hsl(0, 0%, 8%);
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(12, 12, 12);
-    background: 
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
-        url(imgs/background2.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    gap: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--fontRegular);
+  font-size: 14px;
+  background-color: var(--OffBlack);
 }
 
-#social a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    text-align: center;
-    font-size: 18px;
-    color: var(--whitesmoke);
-    transition: .4s;
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--DarkGrey);
+  animation: expandAnimation 1s;
 }
 
-#social img {
-    width: 35px;
+#profileContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  /*background-color: red;*/
 }
 
-#social a:hover {
-    color: var(--whitesmoke);
-    text-decoration: underline;
+#imgProfile {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-#title {
-    font-family: 'young serif', serif;
+#imgProfile img {
+  width: 125px;
+  height: 125px; /* Garantir que altura e largura sejam iguais */
+  border-radius: 50%;
+  object-fit: cover; /* Garante que a imagem preencha o espaço corretamente */
+  object-position: center;
 }
 
-#title h1 {
-    text-align: center;
-    font-size: 70px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-    color: var(--rose);
+#profileInformations {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  gap: 5px;
+  text-align: center;
+  /*background-color: green;*/
 }
 
-#text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 65%;
-    text-align: center;
-    color: var(--whitesmoke);
+#name {
+  font-family: var(--fontSemiBold);
+  font-size: 20px;
+  color: var(--White);
 }
 
-#text p {
-    font-size: 20px;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+#location {
+  font-family: var(--fontSemiBold);
+  color: var(--PrincipalColor);
 }
 
-#imgsBlock {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3%;
+#about {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-#cliqueParaDesbloquear a {
-    color: var(--gray);
-    font-size: 1.2rem;
-    text-align: center;
-    margin: 10px;
+#profileLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-#imgs {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-height: 250px;
-    overflow: hidden;
-    position: relative;
-    gap: 3vw;
+#profileLinks ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+  gap: 5px;
+  /*background-color: red;*/
 }
 
-.imgs--div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    gap: 5px;
+#profileLinks li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  margin: 10px;
+  font-family: var(--fontBold);
+  border-radius: 10px;
+  color: var(--OffBlack);
+  background-color: var(--PrincipalColor);
+  cursor: pointer;
+  transition: 0.4s;
+  gap: 8px;
 }
 
-.foto-container {
-    position: relative;
-    width: 30vw;
-    max-height: 250px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 10px;
+#profileLinks li:hover {
+  color: var(--White);
+  background-color: var(--Grey);
 }
 
-.modelo {
-    width: 100%; /* Preenche toda a largura do contêiner */
-    height: 100%; /* Preenche toda a altura do contêiner */
-    object-fit: cover; /* Garante que a imagem preencha proporcionalmente o espaço */
-    object-position: center; /* Centraliza o foco no meio da imagem */
-    border-radius: 10px;
-    filter: blur(4px);
+a {
+  text-decoration: none;
 }
 
-.cadeado {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px; /* Ajusta o tamanho do cadeado conforme necessário */
-    z-index: 2;
-    pointer-events: none; /* O clique não afeta o cadeado, apenas o link da imagem */
-}
-
-.star--active {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    gap: 3px;
-}
-
-.star--active i {
-    font-size: 12px;
-    color: yellow;
-}
-
-#buttonCTA {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-#buttonCTA a {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 18px;
-    border: 2px solid var(--whitesmoke);
-    border-radius: 5px;
-    color: var(--whitesmoke);
-    background-color: var(--rose);
-    gap: 10px;
-    transition: .4s;
-}
-
-#buttonCTA > a > i {
-    position: relative;
-    animation: arrowmove infinite alternate .4s;
-}
-
-#buttonCTA a:hover {
-    border-radius: 13px;
-    border-color: var(--gray);
-}
-
-#buttonCTA #aviso {
-    font-size: 10px;
-    color: var(--rose);
-}
-
-@keyframes arrowmove {
-    from {
-        left: 0px;
-    }
-
-    to {
-        left: 4px;
-    }
+@keyframes expandAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
