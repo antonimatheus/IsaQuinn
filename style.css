@@ -142,6 +142,16 @@ body {
   background-color: var(--Grey);
 }
 
+#previewBtn li {
+  color: var(--White);
+  background-color: var(--Grey);
+}
+
+#previewBtn li:hover {
+  color: var(--OffBlack);
+  background-color: var(--PrincipalColor);
+}
+
 a {
   text-decoration: none;
 }
