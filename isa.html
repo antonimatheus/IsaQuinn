@@ -14,23 +14,22 @@
     />
     <link rel="stylesheet" href="isaStyle.css" />
     <script>
-      function detectarInstagram() {
-        if (
-          navigator.userAgent.includes("Instagram") ||
-          navigator.userAgent.includes("FBAN") ||
-          navigator.userAgent.includes("FBAV")
-        ) {
-          document.getElementById("avisoNavegador").style.display = "block";
-        }
+      function detectarApp() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        return userAgent.includes("Instagram") || userAgent.includes("FBAN") || userAgent.includes("FBAV") || userAgent.includes("Telegram");
       }
       
-      function abrirNoNavegador() {
-        const url = window.location.href;
-        window.open(url, "_blank");
+      function abrirNoNavegador(url) {
+        if (detectarApp()) {
+          setTimeout(() => {
+            window.location.href = url;
+          }, 500);
+          window.open(url, "_blank");
+        }
       }
     </script>
   </head>
-  <body onload="detectarInstagram()">
+  <body>
     <div id="title">
       <h1>VIP</h1>
     </div>
@@ -41,61 +40,41 @@
     <div id="imgsBlock">
       <div id="imgs">
         <div class="imgs--div">
-          <a
-            href="https://pay.hotmart.com/M98156692P"
-            target="_blank"
-            rel="noreferrer"
-            class="foto-container"
-          >
+          <a href="#" onclick="abrirNoNavegador('https://pay.hotmart.com/M98156692P')" class="foto-container">
             <img src="imgs/cadeado.webp" alt="cadeado1" class="cadeado" />
             <img src="imgs/isaaa3.webp" alt="pic1" class="modelo" />
           </a>
         </div>
 
         <div class="imgs--div">
-          <a
-            href="https://pay.hotmart.com/M98156692P"
-            target="_blank"
-            rel="noreferrer"
-            class="foto-container"
-          >
+          <a href="#" onclick="abrirNoNavegador('https://pay.hotmart.com/M98156692P')" class="foto-container">
             <img src="imgs/cadeado.webp" alt="cadeado3" class="cadeado" />
             <img src="imgs/isaaa.webp" alt="pic3" class="modelo" />
           </a>
         </div>
 
         <div class="imgs--div">
-          <a
-            href="https://pay.hotmart.com/M98156692P"
-            target="_blank"
-            rel="noreferrer"
-            class="foto-container"
-          >
+          <a href="#" onclick="abrirNoNavegador('https://pay.hotmart.com/M98156692P')" class="foto-container">
             <img src="imgs/cadeado.webp" alt="cadeado2" class="cadeado" />
             <img src="imgs/isaaa2.webp" alt="pic2" class="modelo" />
           </a>
         </div>
       </div>
       <div id="cliqueParaDesbloquear">
-        <a href="https://pay.hotmart.com/M98156692P" target="_blank" rel="noreferrer">
+        <a href="#" onclick="abrirNoNavegador('https://pay.hotmart.com/M98156692P')">
           click to see me!
         </a>
       </div>
     </div>
 
     <div id="buttonCTA">
-      <a href="https://pay.hotmart.com/M98156692P" target="_blank" rel="noreferrer">
+      <a href="#" onclick="abrirNoNavegador('https://pay.hotmart.com/M98156692P')">
         <p>
           <strong>see me now!</strong>
         </p>
         <i class="fa-solid fa-arrow-right-long"></i>
       </a>
       <p id="aviso">you will receive it in your email*</p>
-    </div>
-    
-    <div id="avisoNavegador" style="display: none; text-align: center; margin-top: 20px; padding: 10px; background: #ffcc00; color: black; font-weight: bold;">
-      <p>For a better experience, open this link in your browser.</p>
-      <button onclick="abrirNoNavegador()" style="padding: 10px; background: black; color: white; border: none; cursor: pointer;">Open in Browser</button>
     </div>
   </body>
 </html>
